@@ -3,7 +3,7 @@
 L’utente sceglie pari o dispari e inserisce un numero da 1 a 5. Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione). Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione) Dichiariamo chi ha vinto.
  */
 
-/* 
+
 // chiedere all'utente se dispari o pari
 
 const sceltaUser = cicloparidispari()
@@ -73,7 +73,7 @@ function sumPcUser_pari_dispari(pcNumber, numbUser) {
 
     return risultato
 }
- */
+
 
 
 /* 
@@ -104,7 +104,7 @@ if (parola_1 == p_Inversa) {
 
 function reverseString(str) {
     // Step 1. Use the split() method to return a new array
-    var splitString = str.split(""); // var splitString = "hello".split("");
+    var splitString = str.split(""); // var splitString = ""
  
     // Step 2. Use the reverse() method to reverse the new created array
     var reverseArray = splitString.reverse(); 
