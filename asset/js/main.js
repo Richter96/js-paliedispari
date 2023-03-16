@@ -3,31 +3,93 @@
 L’utente sceglie pari o dispari e inserisce un numero da 1 a 5. Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione). Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione) Dichiariamo chi ha vinto.
  */
 
+
+// chiedere all'utente se dispari o pari
+
+const sceltaUser = cicloparidispari()
+
+
+// chiedere all'utente un numero da 1-5
+let numbUser = (Number(prompt('scegli un numero da uno a cinque')))
+const sceltaNumeroUser = cicloNumbUser_1_5(numbUser)
+
+
+// genero un numero random da 1-5
+
+const pcNumber = getRndInteger(1, 5)
+console.log(pcNumber);
+// sommiamo i 2 numeri 
+
+const risultato = sumPcUser_pari_dispari(pcNumber, numbUser)
+
+
+
+// dichiariamo il vincitore
+// se risultato è uguale a dispPar allora User is winner
+if (risultato == sceltaUser) {
+    console.log('utente è il vincitore')
+} else {
+    console.log('pc è il vincitore')
+}
+
+
+
+function cicloNumbUser_1_5(numbUser) {
+    
+    while (numbUser > 5 || numbUser < 1) {
+        alert('seleziona un numero da uno a cinque')
+        numbUser = Number(prompt('scegli un numero da uno a cinque'))
+    }
+}
+
+function cicloparidispari() {
+    let dispPari = prompt('scegli se dispari o pari')
+
+    while (dispPari != 'pari' && dispPari != 'dispari') {
+        alert('seleziona dispari o pari')
+        dispPari = prompt('scegli se dispari o pari')
+    }
+}
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+
+function sumPcUser_pari_dispari(pcNumber, numbUser) {
+
+    const TotPcUser = pcNumber + numbUser
+    console.log(TotPcUser)
+
+
+    let risultato;
+    // se il totoale delle somme è pari o dispari
+    if (TotPcUser % 2 == 0) {
+        risultato = 'pari'
+    } else {
+        risultato = 'dispari'
+    }
+
+    return risultato
+}
+
+
+
 /* 
-function sumTwoNumber (numb1, numb2 ) {
-    alert (numb1 + numb2)
+Palidroma
+Chiedere all’utente di inserire una parola Creare una funzione per capire se la parola inserita è palindroma */
+
+// prompt chiedi una parola
+const parola_1 = prompt('dichiara una parola')
+
+
+// scrivila al contrario
+for (let i = 0; i < parola_1.length; i++) {
+    console.log(parola_1[i])
 }
 
 
-const userNumber = Number(prompt('inserisci un numero'))
-const pcNumber = Math.floor(Math.random()* 5 + 1)
+// confrontala con la parola inserita
 
-sumTwoNumber(userNumber, pcNumber)
-
- */
-
-// creiamo una funzione che sommi 2 numeri
-function sumNumber(numberUser) {
-    // generiamo un numero random da uno a 5
-    const randomN = Math.floor(Math.random() * 5 + 1)
-    const sum = numberUser + randomN // function scope
-    // consol.log(sum) // stampiamo un valore per controllo
-    return sum// restituisce un valore
-}
-
-// definiamo variabile numerio utente.
-const userNumber = Number(prompt('inserisci un numero'))
-
-//diamo il valore alla funzoine 
-const sumPcUser = sumNumber(userNumber)
-console.log(sumPcUser)
+// se è uguale è un palindromo
