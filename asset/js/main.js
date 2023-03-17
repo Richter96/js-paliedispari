@@ -20,7 +20,7 @@ const pcNumber = getRndInteger(1, 5)
 console.log(pcNumber);
 // sommiamo i 2 numeri 
 
-const risultato = sumPcUser_pari_dispari(pcNumber, numbUser)
+const risultato = sum_pc_user_pari_dispari(pcNumber, numbUser)
 
 
 
@@ -34,8 +34,9 @@ if (risultato == sceltaUser) {
 
 
 
+// ---------------------------------------funzoni
+
 function cicloNumbUser_1_5(numbUser) {
-    
     while (numbUser > 5 || numbUser < 1) {
         alert('seleziona un numero da uno a cinque')
         numbUser = Number(prompt('scegli un numero da uno a cinque'))
@@ -44,7 +45,6 @@ function cicloNumbUser_1_5(numbUser) {
 
 function cicloparidispari() {
     let dispPari = prompt('scegli se dispari o pari')
-
     while (dispPari != 'pari' && dispPari != 'dispari') {
         alert('seleziona dispari o pari')
         dispPari = prompt('scegli se dispari o pari')
@@ -57,11 +57,9 @@ function getRndInteger(min, max) {
 
 
 
-function sumPcUser_pari_dispari(pcNumber, numbUser) {
-
+function sum_pc_user_pari_dispari(pcNumber, numbUser) {
     const TotPcUser = pcNumber + numbUser
     console.log(TotPcUser)
-
 
     let risultato;
     // se il totoale delle somme è pari o dispari
@@ -76,11 +74,27 @@ function sumPcUser_pari_dispari(pcNumber, numbUser) {
 
 
 
-/* 
-Palidroma
-Chiedere all’utente di inserire una parola Creare una funzione per capire se la parola inserita è palindroma */
 
-// prompt chiedi una parola
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+---------------------------------------------Palidroma
+Chiedere all’utente di inserire una parola Creare una funzione per capire se la parola inserita è palindroma */
+/* 
+// prompt chiedi una parola (MIA SOLUZIONE)
 const parola_1 = prompt('dichiara una parola')
 
 
@@ -114,4 +128,48 @@ function reverseString(str) {
     
     //Step 4. Return the reversed string
     return joinArray;
+} */
+
+
+
+
+//chiedere all'utente di inserire una parola (SOLUZIONE ALTERNATIVA)
+
+const word = 'otto'
+
+/* // creiamo una funzione per capire se la parola inserita è un palindroma
+// [split] prendo la parola e per ogni lettera creo un elemento dell'arrey
+const splittedWord = word.split('')
+
+        // [reverse]
+const reverseArray = splittedWord.reverse()
+console.log(reverseArray)
+
+        // [join] unisco i caratteri dell'arrei rovesciata per formare di nuovo la parola
+const reverseWord = reverseArray.join('')
+
+        // verifico che la parola sia un palindromo o meo 
+if (word === reverseWord) {
+    console.log(`${word} è un palindromo`)
+} else {
+    console.log(`${word} non è un palindromo`)
+} */
+
+
+function is_palindromo(word) {
+    const reverse_word = word.split('').reverse().join('')
+    if (word === reverseWord) {
+        return true
+    } else {
+        return false
+    }
 }
+
+if (is_palindromo) {
+    console.log(`${word} è un palindromo`)
+} else {
+    console.log(`${word} non è un palindromo`)
+}
+
+
+
